@@ -1,0 +1,26 @@
+<div class="container">
+   <center> <h1><a href = "/page/<%= @user.name %>">Welcome <%= @user.name %></a></h1>
+   <h2>List of Albums</h2>
+</center>
+
+
+<table>
+    <h1>Albums:</h1>
+      <% @album.photos.each do |c| %>
+      <p> <img src="<%= c.file %>"></p>
+      <br>
+      <% end %>
+</table>
+
+<h2>Upload Photo</h2>
+
+    <form action="/upload/<%= @album.id %>" method="post" enctype='multipart/form-data'>
+      <input type='file' name='image'>
+      <br>
+      <input type='submit' value='Upload!'>
+
+      <p><a href="/logout"> Log Out</a></p>
+
+
+
+</div>
